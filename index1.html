@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesseract Studio®</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* Main Grid Container */
+        .container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 0.7rem;
+            gap: 0;
+        }
+
+        /* Navigation */
+        .nav {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: end;
+            border-bottom: 1px solid #000;
+            padding-bottom: 1.3rem;
+            gap: 2rem;
+        }
+
+        .nav-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            justify-self: center;
+        }
+
+        .nav-links a {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #000;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-cta {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            color: #000;
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.7;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 1rem;
+            margin-top: 1.7rem;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        /* Left Column */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 2.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 0;
+        }
+
+        /* Right Column Grid */
+        .info-section {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        /* Top Info Grid */
+        .info-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.4;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 550;
+            line-height: 1.3;
+        }
+
+        /* Bottom About Section */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-description {
+            line-height: 1.5;
+            word-spacing: 0.3rem;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            font-weight: 550;
+        }
+
+        .about-description-2 {
+            line-height: 1.5;
+            word-spacing: 0.3rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            font-weight: 550;
+        }
+
+        .cta-link {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 1.3px;
+            color: #000;
+            transition: opacity 0.2s ease;
+        }
+
+        .cta-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Images Section */
+        .images-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.2rem;
+            margin-top: 0.1rem;
+            height: 50vh;
+        }
+
+        .image-container {
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:first-child img {
+            object-position: center 70%;
+        }
+
+        .image-container:last-child img {
+            object-position: center 30%;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        /*<!-- .hero-section{
+            background-color: yellow;
+        }
+        .info-section{
+            background-color: red;
+        }
+        .images-section{
+            background-color: violet;
+        } */
+
+        /* Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .info-top {
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .nav-links {
+                gap: 2rem;
+            }
+            
+            .nav-title {
+                font-size: 1.6rem;
+            }
+            
+            .nav-links a, .nav-cta {
+                font-size: 1.1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .info-top {
+                gap: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            .nav {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                text-align: center;
+                gap: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            .nav-links {
+                justify-self: center;
+                gap: 1.5rem;
+                order: 2;
+            }
+            
+            .nav-cta {
+                justify-self: center;
+                order: 3;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                gap: 2rem;
+                margin-top: 1rem;
+                padding: 0.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .info-section {
+                margin-top: 0;
+                gap: 1.5rem;
+            }
+            
+            .info-top {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .images-section {
+                height: 40vh;
+                margin-top: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-title {
+                font-size: 1.3rem;
+            }
+            
+            .nav-links a, .nav-cta {
+                font-size: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-number {
+                font-size: 1.1rem;
+            }
+            
+            .info-value, .about-description, .about-description-2 {
+                font-size: 0.9rem;
+            }
+            
+            .info-label {
+                font-size: 0.8rem;
+            }
+            
+            .cta-link {
+                font-size: 1rem;
+            }
+            
+            .images-section {
+                height: 35vh;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0.3rem;
+            }
+            
+            .nav {
+                gap: 0.5rem;
+            }
+            
+            .nav-title {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links a, .nav-cta {
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-number {
+                font-size: 1rem;
+            }
+            
+            .main-content {
+                padding: 0.3rem;
+                margin-top: 0.8rem;
+            }
+            
+            .info-section {
+                gap: 1rem;
+            }
+            
+            .info-block {
+                gap: 1rem;
+            }
+            
+            .about-description, .about-description-2 {
+                line-height: 1.3;
+                word-spacing: 0.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .images-section {
+                height: 30vh;
+                margin-top: 0.8rem;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            
+            .nav-links a, .nav-cta {
+                font-size: 0.8rem;
+            }
+            
+            .info-value, .about-description, .about-description-2 {
+                font-size: 0.8rem;
+            }
+            
+            .images-section {
+                height: 25vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="#" class="nav-title">Tesseract Studio<sup>®</sup></a>
+            <div class="nav-links">
+                <a href="#" class="home-link">home</a>
+                <a href="#">about</a>
+                <a href="#">services</a>
+                <a href="#">works</a>
+            </div>
+            <a href="#" class="nav-cta">create project (<i class="ri-arrow-right-up-line"></i>)</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Column: Hero Section -->
+            <section class="hero-section">
+                <h2 class="hero-number">(02)</h2>
+                <h1 class="hero-title">Crafting Stories in Light,<br>Shadow,<br>and Emotion.</h1>
+            </section>
+
+            <!-- Right Column: Info Section -->
+            <section class="info-section">
+                <!-- Top Info Grid -->
+                <div class="info-top">
+                    <div class="info-block">
+                        <div class="info-item">
+                            <p class="info-label">industry</p>
+                            <h4 class="info-value">Creative Photography & Visual Storytelling</h4>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">location</p>
+                            <h4 class="info-value">New Delhi, India — Capturing Global Moments</h4>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="info-item">
+                            <p class="info-label">services</p>
+                            <h4 class="info-value">
+                                Bespoke Editorials<br>
+                                High-Concept Fashion Campaigns<br>
+                                Experimental Studio Portraits
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom About Section -->
+                <div class="about-section">
+                    <p class="info-label">about</p>
+                    <h4 class="about-description">Tesseract is a forward-thinking photography studio pushing boundaries through cinematic light, color, and mood. We craft frames that feel like scenes from your imagination — surreal, intimate, timeless.</h4>
+                    <h4 class="about-description-2">From concept to lens, we help brands and artists translate vision into visual impact — where emotion meets precision.</h4>
+                    <h4><a href="#" class="cta-link">Bringing Ideas to Life (<i class="ri-arrow-right-up-line"></i>)</a></h4>
+                </div>
+            </section>
+        </main>
+
+        <!-- Images Section -->
+        <section class="images-section">
+            <div class="image-container">
+                <img src="images/Foggy Townscape with Neon Cafe Sign.png" alt="Foggy Townscape with Neon Cafe Sign">
+            </div>
+            <div class="image-container">
+                <img src="images/Neon Solitude Walk.png" alt="Neon Solitude Walk">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

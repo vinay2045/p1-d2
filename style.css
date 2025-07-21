@@ -1,0 +1,506 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html ,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    min-height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    /* font-family: "Bitcount Grid Single"; */
+
+}
+nav a{
+    color: black;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+main{
+    height: 100%;
+    width: 100%;
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+nav{
+    align-items: flex-end;
+    border-bottom: 1px solid black;
+    padding-bottom: 1.3rem;
+   
+    display: flex;
+    justify-content: space-between;
+}
+.create-project{
+    padding-bottom: 2px;
+    text-decoration: underline 1px solid black ;
+
+}
+nav .part1{
+    display: flex;
+    gap: 3rem;
+}
+.title{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.content{
+    padding: 1rem;
+    margin-top:1.7rem ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+   
+    
+}
+.content .part1{
+    width: 50%;
+    height: 100%;
+
+}
+.content .part2{
+    
+    margin-top: 2rem;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    gap: 3rem;
+    
+    display:flex;
+   
+   
+}
+.services{
+    line-height: 1.3rem;
+}
+.description{
+     line-height: 1.5rem;
+     word-spacing:.3rem;
+     margin-bottom:1.8rem ;
+}
+.description-p1{
+     line-height: 1.5rem;
+     word-spacing:.3rem;
+     margin-bottom:.6rem ;
+    
+}
+.content .part1 h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+   
+
+}
+.p2-b22{
+    display: flex;
+    width: 100%;
+    gap: 16rem;
+    justify-content: space-between;
+}
+.content .part1 h1{
+    margin-top: .5rem;
+    font-size: 2.7rem;
+    font-weight: 600;
+    
+}
+.p1-b1{
+    
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    height:60%;
+
+}
+.p1-b2{
+     display: flex;
+    flex-direction: column;
+    width: 50%;
+  
+    height:60%;
+
+}
+.p1-b1-p1{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+   
+}
+.p1-b1-p1 p,
+.p1-b1-p1 h4 {
+  
+    padding: 0;
+    text-align: start; 
+}
+.p1-b1-p2 p,
+.p1-b1-p2 h4 {
+  
+    padding: 0;
+    text-align: start; 
+}
+.p1-b2 p,
+.p1-b2 h4 {
+    
+    padding: 0;
+    text-align: start; 
+}
+p{
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: .4;
+    margin-bottom: .2rem;
+}
+h4{
+    font-size: 1rem;
+    font-weight: 550;
+    
+}
+.images-box{
+    width: 100%;
+    height:100%;
+    display: flex;
+    gap: .2rem;
+    margin-top: .1rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left:0 ;
+    padding-right: 0;
+   
+}
+.image1{
+    width: 50%;
+    height:50%;
+   
+}
+.image2{
+    width: 50%;
+    height:50%;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+  object-position:center 70%;
+  display: block;
+}
+.img1{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  object-position:center 30%;
+  display: block;
+}
+
+.cta1 a{
+    text-decoration: underline 1.3px solid black;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+@media screen and (min-width: 1200px) {
+    main {
+        padding: 1.5rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 3.2rem;
+    }
+    
+    .p2-b22 {
+        gap: 20rem;
+    }
+}
+
+
+@media screen and (max-width: 1199px) {
+    .p2-b22 {
+        gap: 8rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    nav .part1 {
+        gap: 2rem;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 2.2rem;
+    }
+    
+    .p2-b22 {
+        gap: 4rem;
+    }
+    
+    .content .part2 {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding: 0.5rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    nav .part1 {
+        gap: 1.5rem;
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+        order: 1;
+    }
+    
+    .create-project {
+        order: 3;
+        font-size: 1.1rem;
+    }
+    
+    .content {
+        flex-direction: column;
+        padding: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .content .part1 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .content .part2 {
+        width: 100%;
+        margin-top: 0;
+        gap: 1.5rem;
+    }
+    
+    .p2-b22 {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .p1-b1, .p1-b2 {
+        width: 100%;
+    }
+    
+    .images-box {
+        margin-top: 1rem;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    nav a {
+        font-size: 1rem;
+    }
+    
+    nav .part1 {
+        gap: 1rem;
+    }
+    
+    .title {
+        font-size: 1.3rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 1.8rem;
+    }
+    
+    .content .part1 h2 {
+        font-size: 1.1rem;
+    }
+    
+    h4 {
+        font-size: 0.9rem;
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+    
+    .description, .description-p1 {
+        line-height: 1.3rem;
+        word-spacing: 0.2rem;
+    }
+    
+    .cta1 a {
+        font-size: 1rem;
+    }
+    
+    .images-box {
+        height: 35vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        padding: 0.3rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    nav .part1 {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+    }
+    
+    .create-project {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .content {
+        padding: 0.3rem;
+        margin-top: 0.8rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        margin-top: 0.5rem;
+    }
+    
+    .content .part1 h2 {
+        font-size: 1rem;
+    }
+    
+    .content .part2 {
+        gap: 1rem;
+    }
+    
+    .p1-b1-p1 {
+        margin-bottom: 1rem;
+    }
+    
+    h4 {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    p {
+        font-size: 0.75rem;
+    }
+    
+    .services {
+        line-height: 1.2rem;
+    }
+    
+    .description {
+        line-height: 1.2rem;
+        word-spacing: 0.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .description-p1 {
+        line-height: 1.2rem;
+        word-spacing: 0.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .cta1 a {
+        font-size: 0.9rem;
+    }
+    
+    .images-box {
+        height: 30vh;
+        margin-top: 0.8rem;
+        flex-direction: column;
+        width: 100%;
+        gap: .9rem;
+        height: 100%;
+        
+    }
+    .image1{
+        width: 100%;
+    }
+    .create-project{
+        display: none;
+    }
+    nav{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .images-box{
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        font-size: 1.1rem;
+    }
+    
+    .content .part1 h1 {
+        font-size: 1.4rem;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+    }
+    
+    h4 {
+        font-size: 0.8rem;
+    }
+    
+    p {
+        font-size: 0.7rem;
+    }
+    
+    .images-box {
+        height: 25vh;
+    }
+}
